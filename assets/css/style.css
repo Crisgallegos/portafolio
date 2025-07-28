@@ -1,0 +1,472 @@
+body {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    /* Montserrat como fuente principal */
+    color: var(--dark-text);
+    /* Color de texto base para todo el body */
+    line-height: 1.6;
+    /* Mejora la legibilidad de los párrafos */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Courgette', cursive;
+    /* Courgette para todos los títulos */
+    color: var(--dark-text);
+    /* Color por defecto para títulos en fondos claros */
+}
+h1{
+    color: #fff;
+}
+.p-1{
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.escrito{
+    font-weight: 700;
+    color: #ffffff;
+
+}
+.reseña{
+    color: #fff;
+    text-align: center;
+}
+.btn-profile{
+    text-align: center;
+    padding-bottom: 50px;
+}
+.img-circular{
+    width:200px;
+    height:200px;
+    border-radius:160px;
+    border:5px solid #666;
+    position: relative;
+}
+.logo{
+    width: 150px;
+    height: 40px;
+}
+.navbar-scrolled {
+    background-color: #0f52ba !important;
+    transition: background-color 0.3s ease;
+}
+nav li{
+    padding: 5px 30px;
+}
+
+
+/*Fondo degradado*/
+/* Tu CSS actual para el degradado animado */
+.gradient-bg-animation {
+    background: linear-gradient(90deg, #1a2a6c 0%, #0f52ba 50%, #00c6ff 100%); /* Tus tonos de azul y cian */
+    background-size: 300% 100%; /* Tamaño grande para la animación */
+    animation: gradient 15s ease infinite; /* Tu animación de movimiento */
+
+    /* Estas propiedades ya las tienes y son correctas para el contenedor principal */
+    min-height: 100vh;
+    width: 100%;
+    display: flex; /* Para centrar el contenido */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    position: relative; /* ¡CRUCIAL! Necesario para que #particles-js se posicione ABSOLUTAMENTE dentro de él */
+    overflow: hidden; /* Oculta cualquier desbordamiento (partículas, etc.) */
+    /* padding-top y padding-bottom pueden manejarse mejor en .content-above-particles */
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+/* Tus keyframes de animación, estos se mantienen */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------------------------------------------------- */
+/* CSS NUEVO / MODIFICADO para Particles.js y el contenido */
+
+#particles-js {
+  position: absolute; /* Posiciona las partículas de forma absoluta dentro de .hero-section */
+  width: 100%;        /* Cubre todo el ancho */
+  height: 100%;       /* Cubre toda la altura */
+  top: 0;             /* Alineado a la parte superior */
+  left: 0;            /* Alineado a la izquierda */
+  z-index: 0;         /* ¡MUY IMPORTANTE! Esto lo coloca DEBAJO del contenido */
+  background-color: transparent; /* ¡CRUCIAL! Asegura que tu degradado de fondo sea visible a través de las partículas */
+}
+
+/* Estilos para el contenedor de tu contenido (títulos, botones, imagen, etc.) */
+.content-above-particles {
+  position: relative; /* ¡MUY IMPORTANTE! Eleva este contenedor por encima de las partículas */
+  z-index: 1;         /* ¡DEBE SER MAYOR que el z-index de #particles-js (0)! */
+  width: 100%;        /* Asegura que ocupe todo el ancho disponible para el contenido */
+  padding: 50px 0;    /* Puedes volver a agregar padding aquí si lo quitaste de .gradient-bg-animation */
+  /* Los colores del texto y la imagen deben contrastar bien con tu degradado azul */
+}
+
+/* Colores de texto para que se vean bien sobre el degradado azul */
+.hero-title,
+.hero-subtitle,
+.hero-description {
+    color: #ffffff; /* Blanco puro para un contraste fuerte */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra de texto suave para mejor legibilidad */
+}
+
+.typed-text {
+    /* Puedes usar un color de tu paleta que destaque o blanco puro */
+    color: #ADD8E6; /* Por ejemplo, un azul claro o cian para destacar */
+}
+
+/* Ajustes para la imagen del héroe, si es necesario */
+/* Estilos para la imagen del héroe */
+/* Estilos para la imagen del héroe */
+.hero-image {
+  max-width: 700px; /* Ajusta el tamaño máximo para que se vea imponente */
+  height: auto;
+  display: block; /* Centra la imagen */
+  margin: 0 auto;
+  object-fit: cover;
+
+  /* --- SIN BORDES NI REDONDEO --- */
+  border-radius: 0;
+  border: none;
+  /* ------------------------------- */
+
+  transition: all 0.4s ease-in-out;
+}
+
+/* Sombra personalizada para un efecto imponente (puedes ajustarla) */
+.custom-shadow {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Efecto al pasar el ratón (opcional) */
+.hero-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Media query para responsividad */
+@media (max-width: 767.98px) {
+    .hero-image {
+        max-width: 250px;
+        margin-top: 3rem;
+    }
+}
+
+/* Ajusta los colores de los íconos sociales para que contrasten bien */
+.social-links a {
+    color: #ffffff; /* Blanco */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.social-links a:hover {
+    color: #00c6ff; /* Tu color de acento cian al pasar el ratón */
+}
+
+/* Y el botón también debe tener buen contraste */
+.portfolio-btn {
+    /* Tu CSS de botón actual debería funcionar bien, solo asegúrate de que el color del texto sea blanco (#fff) */
+    color: #fff;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 277px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration:none;
+    font-family:'Montserrat', Helvetica, sans-serif;
+    font-weight:700;
+    font-size:17px;
+    letter-spacing: 0.045em;
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buttons a {
+    text-decoration: none;
+    font-size: 28px;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    margin: 15px; /* Reducir el margen para dispositivos más pequeños */
+    background: #012fff;
+    color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(12, 0, 183, 0.5);
+    transition: all .4s ease-in-out;
+  }
+
+  /* Ajustar tamaño de los iconos para pantallas pequeñas */
+  @media (max-width: 576px) {
+    .buttons a {
+      font-size: 20px;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+    }
+  }7
+    /* Fin tamaño de los iconos para pantallas pequeñas */
+
+  .buttons a:hover {
+    transform: scale(1.2);
+    background-color: #61b3ff;
+    color: #ffffff;
+  }
+.bg-portafolio{
+    background-color: #dddddd;
+}
+  .card:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    transition: all .4s ease-in-out;
+  }
+
+.bg-boton{
+    background-color: #F8566B;
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    color: #ffffff;
+    font-size: 15pt;
+    margin-bottom: 30px;    
+}
+.bg-boton:hover{
+    background-color: #ff324d;
+}
+.h5-card{
+    font-weight: 700;
+    text-align: center;
+    font-size: 17px;   
+}
+
+.linea{
+width: 100px;
+height: 5px;
+background-color: #F8566B;
+}
+.logofooter{
+    width: 150px;
+    height: 40px;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+.custom-bar {
+    width: 0%;
+    background-color: #ff5733; /* Color sólido */
+    background-image: linear-gradient(45deg, #ff5733, #c70039); /* Degradado opcional */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra */
+    transition: width 2.5s ease; /* Tiempo y efecto de animación */
+  }
+ /* Para el marquee */
+.skills-marquee {
+    width: 100%;
+    overflow: hidden; /* Oculta el desbordamiento para el efecto marquee */
+    white-space: nowrap; /* Evita que los elementos se envuelvan */
+    position: relative;
+    padding: 20px 0; /* Espacio para que los iconos no se peguen a los bordes */
+}
+
+.marquee-track {
+    display: inline-block;
+    animation: marquee-scroll 20s linear infinite; /* Ajusta la duración según la velocidad deseada */
+    padding-right: 20px; /* Pequeño espacio para evitar cortes bruscos al reiniciar */
+}
+
+.skill-item {
+    display: inline-flex; /* Para alinear ícono y texto */
+    flex-direction: column; /* Icono arriba, texto abajo */
+    align-items: center;
+    margin: 0 30px; /* Espacio entre los iconos */
+    text-align: center;
+    color: #333; /* Color del texto de las habilidades */
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.skill-item img {
+    width: 80px; /* Ajusta el tamaño de tus iconos */
+    height: 80px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease; /* Suave transición al hacer hover */
+}
+
+.skill-item:hover img {
+    transform: translateY(-5px) scale(1.1); /* Efecto hover para los iconos */
+}
+
+
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Mueve el 50% del ancho del track para un loop continuo */
+}
+
+/* Considera una media query para pantallas más pequeñas si los íconos se amontonan */
+@media (max-width: 768px) {
+    .skill-item {
+        margin: 0 15px; /* Menos espacio en móviles */
+    }
+    .skill-item img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* nuevo
+
+/* Estilos para la sección principal */
+.hero-section {
+    min-height: 80vh; /* Ajusta según tus necesidades */
+    padding: 80px 0; /* Espaciado interno */
+    position: relative;
+    overflow: hidden; /* Para animaciones o elementos que puedan desbordar */
+}
+
+/* Estilos para el texto */
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #f0f0f0; /* Color claro para texto sobre fondo oscuro */
+}
+
+.hero-title {
+    font-size: 35pt;
+    color: #ffffff; /* Color blanco para el título */
+}
+
+.typed-text {
+    color: #FF8282; /* Color de acento para el texto tipado */
+}
+
+.hero-description {
+    color: #cccccc;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Estilos para los íconos sociales */
+.social-links a {
+    color: #ffffff;
+    margin: 0 15px;
+    transition: transform 0.3s ease-in-out;
+    display: inline-block; /* Para que margin funcione correctamente */
+}
+
+.social-links a:hover {
+    color: #E178ED; /* Color al pasar el ratón */
+    transform: translateY(-5px);
+}
+
+
+/* Estilos para la imagen del héroe */
+.hero-image {
+  max-width: 500px; /* Ajusta el tamaño de la imagen */
+  height: auto;
+  object-fit: cover; /* Asegura que la imagen se ajuste sin distorsionarse */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    .hero-image {
+      margin-top: 3rem; /* Espacio superior para la imagen en móviles */
+    }
+}
+
+/* Clases de animación si usas Animate.css */
+.animate__animated {
+    /* Define una duración por defecto para tus animaciones si lo deseas */
+    --animate-duration: 1s;
+}
+
+
+/* Sección "Sobre Mí" */
+.about-me-section {
+    background-color: #f8f9fa; /* Un gris muy claro, casi blanco, para mejor contraste */
+    /* O si quieres el #cfcfcf, pero con texto oscuro: background-color: #cfcfcf; */
+    color: #333; /* Color de texto general oscuro para buena legibilidad */
+}
+
+/* Imagen de perfil */
+.about-me-image {
+    max-width: 350px; /* Controla el tamaño máximo de la imagen */
+    height: auto;
+    border-radius: 20px; /* Un redondeo sutil, menos que 50% para un look moderno pero no circular */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    border: 3px solid #E178ED; /* Un borde sutil con tu color de acento */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Una sombra para profundidad */
+}
+
+/* Título de la sección */
+.section-title {
+    color: #1a2a6c; /* Mantenemos tu color azul oscuro */
+    font-size: 2.5rem; /* Tamaño de fuente adaptable */
+}
+
+/* Línea divisoria */
+.underline-divider {
+    width: 60px; /* Un poco más larga */
+    height: 4px; /* Un poco más gruesa */
+    background-color: #E178ED; /* Usando tu color de acento para la línea */
+    border-radius: 2px; /* Ligeramente redondeada */
+}
+
+/* Párrafos de texto */
+.about-me-text {
+    font-size: 1.1rem; /* Un poco más grande para mejor lectura */
+    line-height: 1.7; /* Mayor espaciado entre líneas para legibilidad */
+    color: #495057; /* Un gris oscuro, mejor que el blanco sobre gris claro */
+    text-align: justify; /* Mantiene la justificación */
+}
+
+/* Responsividad para la imagen y el texto */
+@media (max-width: 767.98px) {
+    .about-me-image {
+        max-width: 250px; /* Reducir en móviles */
+        margin-bottom: 2rem; /* Espacio extra debajo de la imagen en móviles */
+    }
+
+    .section-title {
+        font-size: 2rem; /* Ajustar tamaño del título en móviles */
+    }
+
+    .about-me-text {
+        font-size: 1rem; /* Ajustar tamaño de texto en móviles */
+    }
+
+    .underline-divider {
+        margin-left: auto !important; /* Centra la línea en móviles */
+        margin-right: auto !important; /* Centra la línea en móviles */
+    }
+}
