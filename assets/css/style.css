@@ -179,10 +179,10 @@ nav li{
     height: 50px;
     font-size: 1em;
     font-weight: bold;
-    line-height: 60px;
+    line-height: 35px;
     text-align: center;
     text-transform: uppercase;
-    background-color: transparent;
+    background-color:#F8566B;
     cursor: pointer;
     text-decoration:none;
     font-family:'Montserrat', Helvetica, sans-serif;
@@ -446,7 +446,7 @@ background-color: #F8566B;
 .about-me-text {
     font-size: 1.1rem; /* Un poco más grande para mejor lectura */
     line-height: 1.7; /* Mayor espaciado entre líneas para legibilidad */
-    color: #495057; /* Un gris oscuro, mejor que el blanco sobre gris claro */
+    color: #222222; /* Un gris oscuro, mejor que el blanco sobre gris claro */
     text-align: justify; /* Mantiene la justificación */
 }
 
