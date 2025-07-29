@@ -450,6 +450,9 @@ background-color: #F8566B;
     text-align: justify; /* Mantiene la justificación */
 }
 
+
+
+
 /* Responsividad para la imagen y el texto */
 @media (max-width: 767.98px) {
     .about-me-image {
